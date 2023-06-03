@@ -4,7 +4,8 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const API_KEY = '52dc6ddc45cf4a8dae9225040230206';
+require('dotenv').config();
+const API_KEY = process.env.API_KEY;
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + "/index.html");
